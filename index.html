@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- See http://www.firepad.io/docs/ for detailed embedding docs. -->
+<html>
+  <head>
+    <base href="." />
+    <meta charset="utf-8" />
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase-database.js"></script>
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script> -->
+
+    <!-- CodeMirror -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.css"
+    />
+
+    <!-- Styling -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+
+    <!-- Firepad -->
+    <link
+      rel="stylesheet"
+      href="https://firepad.io/releases/v1.5.9/firepad.css"
+    />
+    <script src="https://firepad.io/releases/v1.5.9/firepad.min.js"></script>
+    <!-- <script src="firepad-userlist.js"></script> -->
+
+    <!-- Preact, Preact Hooks, and HTM -->
+    <script src="https://cdn.jsdelivr.net/npm/preact@10.13.2/dist/preact.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htm@3.1.1/dist/htm.min.js"></script>
+    <script src="https://unpkg.com/preact@10.13.2/hooks/dist/hooks.umd.js"></script>
+    <script>
+      const { h, render, createRef, Component } = preact;
+      const { useEffect, useState, useRef } = preactHooks;
+      const html = htm.bind(h);
+      const firebase = window.firebase;
+      const CodeMirror = window.CodeMirror;
+      const Firepad = window.Firepad;
+    </script>
+
+    <style>
+      /* Height / width / positioning can be customized for your use case.
+         For demo purposes, we make firepad fill the entire browser. */
+      #firepad-container {
+        height: 95vh;
+      }
+      .powered-by-firepad {
+        display: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
