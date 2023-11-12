@@ -50,7 +50,7 @@ const App = () => {
         <div class="column is-2">
           <div class="block"></div>
           <div class="block">
-            <p>ScOp Dope Notes</p>
+            <p>Magical Notes App</p>
             <${SignInOut} user=${user} setUser=${setUser} />
           </div>
           ${user
@@ -81,13 +81,6 @@ const App = () => {
     </div>
   `;
 };
-
-// // footer
-// <div class="container">
-// <div class="block">
-//   <div class="content has-text-centered">Sponsored by ScOp VC</div>
-// </div>
-// </div>
 
 export default App;
 render(html`<${App} />`, document.getElementById("app"));
